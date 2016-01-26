@@ -9,6 +9,15 @@ $(document).on('ready', function() {
     var lastName = $("#lastNameShipping").val();
     var lastNameBilling = $("#lastNameBilling").val(lastName);
 
+    var company =$('#companyShip').val();
+    var companyBill=$('#companyBill').val(company);
+
+    var address1=$('#address1Ship').val();
+    var address1Bill=$('#address1Bill').val(address1);
+
+    var address2=$('#address2Ship').val();
+    var address2Bill=$('#address2Bill').val(address2);
+
 
 
     });
