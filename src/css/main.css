@@ -1,1 +1,4 @@
 /* add custom styles */
+form {
+  display: inline-block;
+}
