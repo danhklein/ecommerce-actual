@@ -1,1 +1,27 @@
-/* add custom styles */
+ .headpage{
+   font-size: 60px;
+   text-align: center;
+   background-image: url ('https://www.script-tutorials.com/demos/91/images/background.jpg');
+   /*background-color: red;*/
+ }
+
+ .navbar .navbar-nav {
+    display: inline-block;
+    float: none;
+ }
+
+ a .navbar-brand {
+   font-size: 50px;
+}
+
+.navbar .navbar-collapse {
+    text-align: center;
+}
+
+.navbar .navbar-collapse li{
+  font-size: 25px;
+}
+
+.badge{
+  margin: 4px;
+}
