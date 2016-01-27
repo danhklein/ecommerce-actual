@@ -63,3 +63,8 @@ h2 {
   text-align: center;
 }
 
+input:valid {
+  border-color: green;
+  color: green;
+}
+
