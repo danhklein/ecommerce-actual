@@ -2,8 +2,8 @@
  .headpage{
    font-size: 60px;
    text-align: center;
-   background-image: url ('https://www.script-tutorials.com/demos/91/images/background.jpg');
-   /*background-color: red;*/
+   background: url("http://coloradowineexperience.com/wp-content/uploads/2015/05/856519-taste-wine-glasses.jpg") no-repeat;
+/*   background-color: red;*/
  }
 
  .navbar .navbar-nav {
@@ -30,3 +30,36 @@
 form {
   display: inline-block;
 }
+
+.footer{
+  background: url("https://resortsac.com/wp-content/uploads/2014/11/cielo-wine-bar-atlantic-city-header-img-900x357.jpg") no-repeat;
+   /*background-color: red;*/
+}
+
+/*#exampleInputEmail2 {
+  width: 85%;
+}
+
+#sign-up {
+  width: 15%
+}*/
+
+.col-centered {
+    /*display:inline-block;*/
+    float:none;
+    /* reset the text-align */
+    /*text-align:left;*/
+    /* inline-block space fix */
+    /*margin-right:-4px;*/
+    margin: 0 auto;
+}
+
+.carousel{
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
