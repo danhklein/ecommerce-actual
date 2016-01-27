@@ -18,6 +18,12 @@ $(document).on('ready', function() {
     var address2=$('#address2Ship').val();
     var address2Bill=$('#address2Bill').val(address2);
 
+    var stateShip = $('#stateShip').val();
+    var stateBill = $('#stateBill').val(stateShip);
+
+    var zip = $('#zipShip').val();
+    var zipBill = $('#zipBill').val(zip);
+
 
 
     });
