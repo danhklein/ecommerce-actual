@@ -22,7 +22,7 @@ $(document).on('ready', function() {
 
     });
 
-  var $btns = $('.btn-primary, .btn-default');
+  var $btns = $('.hover');
     $btns.hide();
 
   $('.thumbnail').hover(function() {
@@ -30,7 +30,7 @@ $(document).on('ready', function() {
     $(this).find($btns).show(500);
     console.log($(this).children());
     // $('div').css('position', 'relative');
-    $('.btnContainer').css({top: '100px', left: '55px', opacity: '.8', position:'absolute'});
+    $('.btnContainer').css({top: '160px', left: '88px', opacity: '.8', position:'absolute'});
     // console.log('works!');
   },
   function(){
