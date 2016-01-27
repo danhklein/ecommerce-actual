@@ -1,7 +1,4 @@
 $(document).ready(function(){
-  $('#all').on('click', function(){
-  $('.white, .red').show();
-  })
   $('#red').on('click', function(){
     console.log('test')
       $('.white').hide();
