@@ -2,3 +2,30 @@
 form {
   display: inline-block;
 }
+
+/*#exampleInputEmail2 {
+  width: 85%;
+}
+
+#sign-up {
+  width: 15%
+}*/
+
+.col-centered {
+    /*display:inline-block;*/
+    float:none;
+    /* reset the text-align */
+    /*text-align:left;*/
+    /* inline-block space fix */
+    /*margin-right:-4px;*/
+    margin: 0 auto;
+}
+
+.carousel{
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
