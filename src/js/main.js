@@ -12,13 +12,27 @@ $(document).on('ready', function() {
     var lastName = $("#lastNameShipping").val();
     var lastNameBilling = $("#lastNameBilling").val(lastName);
 
+    var company =$('#companyShip').val();
+    var companyBill=$('#companyBill').val(company);
+
+    var address1=$('#address1Ship').val();
+    var address1Bill=$('#address1Bill').val(address1);
+
+    var address2=$('#address2Ship').val();
+    var address2Bill=$('#address2Bill').val(address2);
+
+    var stateShip = $('#stateShip').val();
+    var stateBill = $('#stateBill').val(stateShip);
+
+    var zip = $('#zipShip').val();
+    var zipBill = $('#zipBill').val(zip);
+
 
 
     });
 
+    var $btns = $('.hover');
 
-
-  var $btns = $('.btn-primary, .btn-default');
     $btns.hide();
 
   $('.thumbnail').hover(function() {
@@ -26,7 +40,7 @@ $(document).on('ready', function() {
     $(this).find($btns).show(500);
     console.log($(this).children());
     // $('div').css('position', 'relative');
-    $('.btnContainer').css({top: '100px', left: '55px', opacity: '.8', position:'absolute'});
+    $('.btnContainer').css({top: '160px', left: '88px', opacity: '.8', position:'absolute'});
     // console.log('works!');
   },
   function(){
