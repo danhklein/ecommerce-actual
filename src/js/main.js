@@ -2,6 +2,9 @@
 
 $(document).on('ready', function() {
   console.log('sanity check');
+  // var options = { $AutoPlay: true };
+  // var jssor_slider1 = new $JssorSlider$('slider1_container', options);
+
   $('#billing-same').on('click',function() {
     var firstName = $("#firstNameShipping").val();
     var firstNameBilling = $("#firstNameBilling").val(firstName);
@@ -12,6 +15,8 @@ $(document).on('ready', function() {
 
 
     });
+
+
 
   var $btns = $('.btn-primary, .btn-default');
     $btns.hide();
@@ -28,3 +33,6 @@ $(document).on('ready', function() {
       $(this).find($btns).hide(500);
   });
 });
+
+  
+      
