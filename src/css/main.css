@@ -33,6 +33,7 @@
 
 .badge{
   margin: 4px;
+}
 
 /* add custom styles */
 form {
@@ -70,11 +71,13 @@ h2 {
 
 
 
-input:valid {
-  border-color: green;
-  color: green;
+input.warning {
+   border-color: rgba(249, 162, 14, 0.7);
+  color: red;
 }
 
+body {
+  background-color: "red";}
 
 .sucka {
   text-align: center;

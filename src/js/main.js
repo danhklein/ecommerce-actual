@@ -30,7 +30,7 @@ $(document).on('ready', function() {
 
 
 //button hover functionality
-  
+
   var $btns = $('.hover');
   $btns.hide();
 
@@ -52,7 +52,6 @@ $(document).on('ready', function() {
   $('form').on('submit', function(){
     event.preventDefault();
     var $email = $('input[name="email"]');
-    // console.log($email.val());
     if(validateEmail($email.val())){
       $email.val('');
       $('p').remove();
@@ -71,9 +70,25 @@ $(document).on('ready', function() {
     return emailPatten.test(str);
   }
 
+   ['firstNameShipping', 'lastNameShipping'].forEach(function (inputName) {
+  var $input = $("input[name='" + inputName + "']");
+   $input.on('blur', function() {
+    // event.preventDefault();
+      var val = $input.val();
+      if (!val) {
+        $input.addClass('warning');
+        // $('#firstNameShipping').css("background-color":"red");
+      } else {
+        $input.removeClass('warning');
+      }
+      console.log($input, val)
+      console.log(val === true)
+      console.log('test');
+    });
+  });
+
 
 });
 
 
-  
-      
+

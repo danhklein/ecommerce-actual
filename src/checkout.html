@@ -69,11 +69,11 @@
                 <div class="form-group" id="name">
                   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <label for="inputFirstName">First Name</label>
-                    <input type="text" class="form-control" id="firstNameShipping" placeholder="Dan" required autofocus>
+                    <input type="text" class="form-control" name="firstNameShipping" id="firstNameShipping" required autofocus>
                   </div>
                   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                     <label for="inputLastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastNameShipping" placeholder="Klein" required>
+                    <input type="text" class="form-control" name="lastNameShipping" id="lastNameShipping" required>
                   </div>
                 </div>
 
@@ -198,7 +198,7 @@
                     <label for="inputAddress-2">Address 2</label>
                     <input type="text" class="form-control" id="address2Ship" placeholder="The White House">
                   </div>
-                  <!-- Needs jQuery -->
+
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>State: <span>*</span></label><br>
                       <select name="state" class="form-control" id="stateBill" required>
@@ -338,5 +338,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="js/main.js"></script>
+
+
   </body>
 </html>
