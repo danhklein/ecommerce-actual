@@ -194,8 +194,15 @@ input.warning {
   text-align: left;
 }
 
+<<<<<<< HEAD
 .order {
   margin-bottom: 20px;
 }
+=======
+#invoice-buttons{
+  margin-left: 50px;
+}
+
+>>>>>>> upstream/master
 
 

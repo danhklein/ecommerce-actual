@@ -104,7 +104,7 @@ $(document).on('ready', function() {
     });
   });
 
-   ['address2Ship','address2Bill'].forEach(function (inputName) {
+   ['address2Ship'].forEach(function (inputName) {
     var $input = $("input[name='" + inputName + "']");
     var test = $('input[name="address1Ship"]');
       $input.on('focus', function() {
@@ -115,16 +115,28 @@ $(document).on('ready', function() {
       }
     });
   });
-   // ['stateShip', 'stateBill'].forEach(function(inputName) {
-   //  var $input = $("select[name='" + inputName + "']");
-   //  $input.on('blur', function() {
-   //  if ($input.val"n/a") {
-   //      $input.addClass('warning');
-   //    } else {
-   //      $input.removeClass('warning');
-   //    }
-   //  });
-   // });
+
+   ['address2Bill'].forEach(function (inputName) {
+    var $input = $("input[name='" + inputName + "']");
+    var test = $('input[name="address1Bill"]');
+      $input.on('focus', function() {
+       if (!test.val()) {
+        $input.addClass('warning');
+      } else {
+        $input.removeClass('warning');
+      }
+    });
+  });
+   ['stateShip', 'stateBill'].forEach(function(inputName) {
+    var $input = $("select[name='" + inputName + "']");
+    $input.on('blur', function() {
+    if (!($input.val())) {
+        $input.addClass('warning');
+      } else {
+        $input.removeClass('warning');
+      }
+    });
+   });
 
 // function validate()
 // {
