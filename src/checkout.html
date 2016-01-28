@@ -85,7 +85,7 @@
                 <div class="form-group" id="address">
                   <div class="col-md-6">
                     <label for="inputAddress-1">Address 1</label>
-                    <input type="text" class="form-control" id="address1Ship" placeholder="1600 Pennsylvania" required>
+                    <input type="text" class="form-control" name="address1Ship" id="address1Ship" placeholder="1600 Pennsylvania" required>
                   </div>
                   <div class="col-md-6">
                     <label for="inputAddress-2">Address 2</label>
@@ -96,7 +96,7 @@
                 <div class="form-group">
                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <label>State: <span>*</span></label><br>
-                    <select name="state" class="form-control" id="stateShip" required>
+                    <select name="stateShip" class="form-control" id="stateShip" required>
                       <option value=false>Select State</option>
                       <option value="AL">AL</option>
                       <option value="AK">AK</option>
@@ -154,7 +154,7 @@
 
                   <div class="col-md-4 col-sm-6">
                     <label for="inputZip">Zip</label>
-                    <input type="number" id="zipShip" class="form-control" required>
+                    <input type="number" id="zipShip" name="zipShip" class="form-control" required>
                   </div>
                 </div>
                 <div class="checkbox">
@@ -176,11 +176,12 @@
                 <div class="form-group" id="name">
                   <div class="col-md-6">
                     <label for="inputFirstName">First Name</label>
-                    <input type="text" class="form-control" id="firstNameBilling" placeholder="Dan" required>
+                    <input type="text" class="form-control" id="firstNameBilling" name="firstNameBilling" required>
                   </div>
                   <div class="col-md-6">
                     <label for="inputLastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastNameBilling" placeholder="Klein" required>
+                    <input type="text" class="form-control"
+                    name="lastNameBilling" id="lastNameBilling" placeholder="Klein" required>
                   </div>
                 </div>
 
@@ -192,17 +193,17 @@
                 <div class="form-group" id="address">
                   <div class="col-md-6">
                     <label for="inputAddress-1">Address 1</label>
-                    <input type="text" class="form-control" id="address1Bill" placeholder="1600 Pennsylvania" required>
+                    <input type="text" class="form-control" name="address1Bill" id="address1Bill" placeholder="1600 Pennsylvania" required>
                   </div>
                   <div class="col-md-6">
                     <label for="inputAddress-2">Address 2</label>
-                    <input type="text" class="form-control" id="address2Ship" placeholder="The White House">
+                    <input type="text" class="form-control" name="address2Ship" id="address2Ship" placeholder="The White House">
                   </div>
 
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                       <label>State: <span>*</span></label><br>
-                      <select name="state" class="form-control" id="stateBill" required>
-                        <option value=false>Select State</option>
+                      <select name="stateBill" class="form-control" id="stateBill" required>
+                        <option value=0>Select State</option>
                         <option value="AL">AL</option>
                         <option value="AK">AK</option>
                         <option value="AZ">AZ</option>
@@ -259,7 +260,7 @@
 
                   <div class="col-md-4 col-sm-6">
                     <label for="inputZip">Zip</label>
-                    <input type="number" id="zipBill" class="form-control" required>
+                    <input type="number" name="zipBill" id="zipBill" class="form-control" required>
                   </div>
                 </div>
 

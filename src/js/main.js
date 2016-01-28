@@ -70,19 +70,41 @@ $(document).on('ready', function() {
     return emailPatten.test(str);
   }
 
-   ['firstNameShipping', 'lastNameShipping'].forEach(function (inputName) {
+   ['firstNameShipping', 'lastNameShipping','address1Ship', 'firstNameBilling', 'lastNameBilling','address1Bill','zipShip','zipBill'].forEach(function (inputName) {
   var $input = $("input[name='" + inputName + "']");
    $input.on('blur', function() {
     // event.preventDefault();
       var val = $input.val();
       if (!val) {
         $input.addClass('warning');
-        // $('#firstNameShipping').css("background-color":"red");
       } else {
         $input.removeClass('warning');
       }
     });
   });
+
+   ['address2Ship','address2Bill'].forEach(function (inputName) {
+    var $input = $("input[name='" + inputName + "']");
+    var test = $('input[name="address1Ship"]');
+      $input.on('focus', function() {
+       if (!test.val()) {
+        $input.addClass('warning');
+      } else {
+        $input.removeClass('warning');
+      }
+    });
+  });
+   // ['stateShip', 'stateBill'].forEach(function(inputName) {
+   //  var $input = $("select[name='" + inputName + "']");
+   //  $input.on('blur', function() {
+   //  if ($input.val ==="n/a") {
+   //      $input.addClass('warning');
+   //    } else {
+   //      $input.removeClass('warning');
+   //    }
+   //  });
+   // });
+
 
 
 });
