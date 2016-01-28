@@ -68,7 +68,7 @@ $(document).on('ready', function() {
     var emailPatten = /^([\w\.\-\+_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm;
     return emailPatten.test(str);
   }
-
+//Checkout Form validations
    ['firstNameShipping', 'lastNameShipping','address1Ship', 'firstNameBilling', 'lastNameBilling','address1Bill','zipShip','zipBill'].forEach(function (inputName) {
   var $input = $("input[name='" + inputName + "']");
    $input.on('blur', function() {
@@ -77,6 +77,24 @@ $(document).on('ready', function() {
       if (!val) {
         $input.addClass('warning');
       } else {
+        $input.removeClass('warning');
+      }
+    });
+  });
+
+   ['zipShip','zipBill'].forEach(function (inputName) {
+  var $input = $("input[name='" + inputName + "']");
+   $input.on('blur', function() {
+    // event.preventDefault();
+      var val = $input.val();
+      if (!val) {
+        $input.addClass('warning');
+      } else if
+        (($input.length)< 5 || (zip.length)>5 ) {
+          $input.addClass('warning');
+        errorMessage = "*zipcode should only be 5 digits";
+      }
+      else {
         $input.removeClass('warning');
       }
     });
@@ -93,17 +111,26 @@ $(document).on('ready', function() {
       }
     });
   });
-   ['stateShip', 'stateBill'].forEach(function(inputName) {
-    var $input = $("select[name='" + inputName + "']");
-    $input.on('blur', function() {
-    if ($input.val"n/a") {
-        $input.addClass('warning');
-      } else {
-        $input.removeClass('warning');
-      }
-    });
-   });
+   // ['stateShip', 'stateBill'].forEach(function(inputName) {
+   //  var $input = $("select[name='" + inputName + "']");
+   //  $input.on('blur', function() {
+   //  if ($input.val"n/a") {
+   //      $input.addClass('warning');
+   //    } else {
+   //      $input.removeClass('warning');
+   //    }
+   //  });
+   // });
 
+// function validate()
+// {
+//    if(document.getElementById("ddlList").value == "")
+//    {
+//       alert("Please select value"); // prompt user
+//       document.getElementById("ddlList").focus(); //set focus back to control
+//       return false;
+//    }
+// }
 
 //end email validation
 
