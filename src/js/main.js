@@ -111,16 +111,16 @@ $(document).on('ready', function() {
       }
     });
   });
-   // ['stateShip', 'stateBill'].forEach(function(inputName) {
-   //  var $input = $("select[name='" + inputName + "']");
-   //  $input.on('blur', function() {
-   //  if ($input.val"n/a") {
-   //      $input.addClass('warning');
-   //    } else {
-   //      $input.removeClass('warning');
-   //    }
-   //  });
-   // });
+   ['stateShip', 'stateBill'].forEach(function(inputName) {
+    var $input = $("select[name='" + inputName + "']");
+    $input.on('blur', function() {
+    if ($input.val="") {
+        $input.addClass('warning');
+      } else {
+        $input.removeClass('warning');
+      }
+    });
+   });
 
 // function validate()
 // {
