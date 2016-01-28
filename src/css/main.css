@@ -2,6 +2,8 @@
 .jumbotron {
   background: url("https://resortsac.com/wp-content/uploads/2014/11/cielo-wine-bar-atlantic-city-header-img-900x357.jpg") ;
   background-size: 100%;
+  opacity: 0.9;
+  margin-top: 10px;
 }
 
 
@@ -33,6 +35,7 @@
 
 .badge{
   margin: 4px;
+}
 
 /* add custom styles */
 form {
