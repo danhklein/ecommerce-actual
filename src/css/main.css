@@ -87,5 +87,109 @@ input.warning {
   color: black;
 }
 
+.carousel-images {
+  position:  relative;
+  height: 300px;
+  margin: 0 10%;
+}
+
+
+.glyphicon-chevron-left {
+  position: absolute;
+  top: 50%;
+  left: 7%;
+  font-size: 300%;
+  transform: translate(0, -50%);
+}
+
+.glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  right: 7%;
+  font-size: 300%;
+  transform: translate(0, -50%);
+}
+
+.glyphicon-play {
+  position: absolute;
+  top: 50%;
+  font-size: 500%;
+  z-index: 100;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+
+.glyphicon-pause {
+  position: absolute;
+  top: 50%;
+  font-size: 500%;
+  z-index: 100;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+
+.play-pause {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+  height: 60px;
+  width: 60px;
+}
+
+.glyphicon-forward {
+  position: absolute;
+  top: 50%;
+  font-size: 500%;
+  z-index: 100;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+
+.forward {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+  height: 60px;
+  width: 60px;
+}
+
+.backward {
+  position: absolute;
+  top: 50%;
+  z-index: 1;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+  height: 60px;
+  width: 60px;
+}
+
+.glyphicon-backward {
+  position: absolute;
+  top: 50%;
+  font-size: 500%;
+  z-index: 100;
+  left: 43%;
+  transform: translate(-50%, -50%);
+  opacity: .5;
+}
+
+.carousel-images div[class^="image"] {
+  background-position: 50%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+
 
 
