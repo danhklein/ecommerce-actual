@@ -1,6 +1,10 @@
 /* add custom styles */
 #products_title{
-  margin-top:50px;
+  margin-left: 150px;
+}
+
+.wine a {
+  font-size: 25px;
 }
 
 .media{
