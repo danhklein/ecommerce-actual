@@ -66,11 +66,169 @@ $(document).on('ready', function() {
   });
 
   function validateEmail (str) {
-    // body...
-    var emailPatten = /^([\w\.\-\+_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm
+    var emailPatten = /^([\w\.\-\+_]+)?\w+@[\w-_]+(\.\w+){1,}$/igm;
     return emailPatten.test(str);
   }
 
+//end email validation
+
+//Make Carousel
+  var images = [
+    '1200x300?text=Image%201',
+    '1200x300?text=Image%202',
+    '1200x300?text=Image%203',
+    '1200x300?text=Image%204',
+    '1200x300?text=Image%205',  
+  ];  
+
+  var url = 'http://placehold.it/';
+
+  //create divs with background images using images Array above
+  images.forEach(function(eachImg, index){
+    fullUrl = url + eachImg;
+    $imgDiv = $('<div></div>');
+    $imgDiv.addClass('image');
+    if(!index){
+      $imgDiv.css({'background': 'url('+fullUrl+')50%', 'display': 'inline-block'});
+    } else {
+      $imgDiv.css({'background': 'url('+fullUrl+')50%'});
+      $imgDiv.hide();
+    }
+    $('.carousel-images').append($imgDiv);
+  });
+
+  //create auto slider and previous/next buttons
+
+  var currentIndex = 0;
+  var items = $('.carousel-images').children();
+  var itemAmt = items.length;
+  var autoSlide;
+  var autoSlideReverse;
+  var sliderState = 1;
+
+     slide();   
+
+  function cycleItems() {
+    // console.log('cycleItems');
+    var item = items.eq(currentIndex);
+    items.hide();
+    item.css('display','inline-block');
+  }
+
+  function slide (){
+    // console.log('slide');
+    autoSlide = setInterval(function() {
+      currentIndex += 1;
+      if (currentIndex > itemAmt - 1) {
+        currentIndex = 0;
+      }
+      cycleItems();
+    }, 3000);
+  }
+
+  function slideReverse (){
+    // console.log('slideReverse');
+    autoSlideReverse = setInterval(function() {
+      currentIndex -= 1;
+      if (currentIndex < 0) {
+        currentIndex = itemAmt - 1;
+      }
+      cycleItems();
+    }, 3000);
+  }
+
+  //Manual Forward and Backward buttons.
+  $('.glyphicon-chevron-right').on('click', function() {
+    clearInterval(autoSlide);
+    clearInterval(autoSlideReverse);
+    currentIndex += 1;
+    if (currentIndex > itemAmt - 1) {
+      currentIndex = 0;
+    }
+    cycleItems();
+    slide();
+  });
+
+  $('.glyphicon-chevron-left').on('click', function() {
+    clearInterval(autoSlideReverse);
+    clearInterval(autoSlide);
+    currentIndex -= 1;
+    if (currentIndex < 0) {
+      currentIndex = itemAmt - 1;
+    }
+    cycleItems();
+    slideReverse();
+  });
+
+  //Add Pause/Play/Forward/Backwards functionality
+  $('.glyphicon-play').hide();
+  $('.glyphicon-pause').hide();
+  $('.glyphicon-forward').hide();
+  $('.glyphicon-backward').hide();
+
+  var PlayState = 1;
+  // console.log(PlayState);
+
+  //On Hover Actions
+
+  $('.image, .backward, .forward, .play-pause').hover(function(){
+    if(PlayState){
+          // console.log(PlayState);
+      $('.glyphicon-pause').show();
+      $('.glyphicon-forward').show();
+      $('.glyphicon-backward').show();
+    } else {
+      $('.glyphicon-play').show();
+      $('.glyphicon-forward').show();
+      $('.glyphicon-backward').show();
+    }
+  },
+    function(){
+      $('.glyphicon-pause').hide();
+      $('.glyphicon-play').hide();
+      $('.glyphicon-forward').hide();
+      $('.glyphicon-backward').hide();
+  });
+  
+  //Click Play/Pause Button
+  $('.image, .play-pause').on('click', function(){
+    if(PlayState){
+      clearInterval(autoSlide);
+      clearInterval(autoSlideReverse);
+      PlayState = 0;
+      // console.log(PlayState);
+      $('.glyphicon-pause').hide();
+      $('.glyphicon-play').show();
+      $('.glyphicon-forward').show();
+      $('.glyphicon-backward').show();
+    } else {
+        clearInterval(autoSlide);
+        clearInterval(autoSlideReverse);
+        slide();
+        PlayState = 1;
+        // console.log(PlayState);
+        $('.glyphicon-play').hide();
+        $('.glyphicon-pause').show();
+        $('.glyphicon-forward').show();
+        $('.glyphicon-backward').show();
+    }
+  });
+
+  //Click Forward button to go forward
+  $('.forward').on('click', function(){
+    clearInterval(autoSlideReverse);
+    clearInterval(autoSlide);
+    slide();
+  });
+
+  //click Reverse Button to go backwards.
+  $('.backward').on('click', function(){
+    clearInterval(autoSlideReverse);
+    clearInterval(autoSlide);
+    slideReverse();
+  });  
+
+// End Carousel
 
 });
 
