@@ -190,6 +190,12 @@ input.warning {
   width: 100%;
 }
 
+.left {
+  text-align: left;
+}
 
+.order {
+  margin-bottom: 20px;
+}
 
 
