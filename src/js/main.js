@@ -136,24 +136,30 @@ $(document).on('ready', function() {
 
 //Make Carousel
   var images = [
-    '1200x300?text=Image%201',
-    '1200x300?text=Image%202',
-    '1200x300?text=Image%203',
-    '1200x300?text=Image%204',
-    '1200x300?text=Image%205',
-  ];
+     'http://www.ferrarabynight.com/wp-content/uploads/2014/11/vino-bottiglia-tazza-uva-vigneto-172518.jpg',
+     'https://lma.ca/wp-content/uploads/2014/03/171579690.jpg',
+     'http://www.lucianopignataro.it/wp-content/uploads/2015/04/Torrevento-la-bottaia-immagine-tratta-dal-sito-aziendale-e1429603865635.jpg',
+     'http://www.ferienwohnung-drenk.de/images/slider/sehenswert/invinoveritas.jpg',
+     'https://www.fewo-direkt.de/info/files/live/sites/de/files/shared/Urlaubsideen/Neue%20Templates/Beliebte%20Reiseziele/Wein_178751885.jpg',
+     'http://www.toursofseattle.com/wp-content/uploads/2010/04/winery1024_hp.jpg',
+     'http://www.eastcountymagazine.org/sites/eastcountymagazine.org/files/grapevines-Napa-sm_1.jpg',
+     'http://www.officialoct.com/wp-content/uploads/2015/12/Testing-Room-Wine-Storage-Racks.jpg',
+];
+
 
   var url = 'http://placehold.it/';
 
   //create divs with background images using images Array above
   images.forEach(function(eachImg, index){
-    fullUrl = url + eachImg;
+    // fullUrl = url + eachImg;
+    fullUrl = images[index];
+    // console.log(fullUrl);
     $imgDiv = $('<div></div>');
     $imgDiv.addClass('image');
     if(!index){
-      $imgDiv.css({'background': 'url('+fullUrl+')50%', 'display': 'inline-block'});
+      $imgDiv.css({'background': 'url('+fullUrl+') 50%', 'display': 'inline-block'});
     } else {
-      $imgDiv.css({'background': 'url('+fullUrl+')50%'});
+      $imgDiv.css({'background': 'url('+fullUrl+') 50%'});
       $imgDiv.hide();
     }
     $('.carousel-images').append($imgDiv);
