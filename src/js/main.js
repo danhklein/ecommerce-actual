@@ -360,10 +360,14 @@ $(document).on('ready', function() {
   function stripeResponseHandler(status, response) {
     if (response.error) {
       console.log(response.error.message);
+      $('form').append('<p>Your credit card was declined. It sucks to be you</p>')
     } else {
       console.log(response.id);
+       window.location = href='invoice.html';
     }
   }
+
+  //Get Invoice if
 
 
 
