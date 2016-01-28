@@ -61,7 +61,7 @@ $(document).on('ready', function() {
     } else {
       $('p').remove();
       $email.addClass('invalidEmail');
-      $('.well-lg').append('<p class="sucka">Thanks for playing, better luck next time!</p>');
+      $('.well-lg').append('<p class="sucka">Bark, bark bark bark, bark, bark.<br><br>Oh no! Our user needs help entering a valid email address! Thanks, Lassie, you\'re the best.</p>');
     }
   });
 
