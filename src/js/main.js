@@ -2,6 +2,8 @@
 
 $(document).on('ready', function() {
   console.log('sanity check');
+
+  Stripe.setPublishableKey('pk_test_PVOKuxQxbdS8vjKTWqKeIo0H');
   // var options = { $AutoPlay: true };
   // var jssor_slider1 = new $JssorSlider$('slider1_container', options);
 
@@ -26,8 +28,10 @@ $(document).on('ready', function() {
 
     var zip = $('#zipShip').val();
     var zipBill = $('#zipBill').val(zip);
+
   });
 
+});
 
 //button hover functionality
 
@@ -304,8 +308,58 @@ $(document).on('ready', function() {
 
 // End Carousel
 
+//Stripe API Call and field validation
+  $('.order').on('click', function(){
+    var cardInfo = {
+        number: $('.card-number').val(),
+        cvc: $('.card-cvc').val(),
+        exp_month: $('.card-expiry').val().split('/')[0],
+        exp_year: $('.card-expiry').val().split('/')[1],
+    };
 
-});
+    Stripe.card.createToken(cardInfo, stripeResponseHandler);
+  });
+
+  $('.card-number').on('blur', function(){
+    // var cardNum = $(this);
+    // console.log(cardNum);
+    if(!Stripe.card.validateCardNumber($(this).val())){
+      // $(this).css({'background-color': 'red', 'opacity': .7});
+      $(this).addClass('warning');
+      // $(this).append('<p>Your credit card number is not valid. Please try again');
+    } else {
+      $(this).removeClass('warning');
+    }
+  });
+
+  $('.card-cvc').on('blur', function(){
+    if(!Stripe.card.validateCVC($(this).val())){
+      $(this).addClass('warning');
+    } else {
+      $(this).removeClass('warning');
+    }
+  });
+
+  $('.card-expiry').on('blur', function(){
+      var expMonth = $(this).val().split('/')[0];
+      var expYear = $(this).val().split('/')[1];
+    if(!Stripe.card.validateExpiry(expMonth, expYear)){
+      $(this).addClass('warning');
+    } else {
+      $(this).removeClass('warning');
+    }
+  });
+
+
+  function stripeResponseHandler(status, response) {
+    if (response.error) {
+      console.log(response.error.message);
+    } else {
+      console.log(response.id);
+    }
+  }
+
+
 
 
 
