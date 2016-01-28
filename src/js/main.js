@@ -81,9 +81,6 @@ $(document).on('ready', function() {
       } else {
         $input.removeClass('warning');
       }
-      console.log($input, val)
-      console.log(val === true)
-      console.log('test');
     });
   });
 
